@@ -4,11 +4,12 @@ export type Auth = {
 };
 
 export type User = {
-  id: number;
+  id: string;
   firstName: string;
   lastName: string;
   email: string;
   password: string;
+  agreeTerms: boolean;
 };
 
 export type LoginForm = {
