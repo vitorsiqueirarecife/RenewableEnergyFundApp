@@ -6,4 +6,6 @@ export interface Props extends TextInputProps {
   error?: FieldError | undefined;
   multiline?: boolean;
   numberOfLines?: number;
+  adornment?: JSX.Element;
+  adornmentAction?: () => void;
 }
