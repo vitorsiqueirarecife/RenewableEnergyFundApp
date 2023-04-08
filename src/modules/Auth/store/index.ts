@@ -21,7 +21,7 @@ export const auth = createSlice({
       if (found) {
         state.Session = found;
       } else {
-        throw 'User not found!';
+        throw 'User not found';
       }
     },
   },

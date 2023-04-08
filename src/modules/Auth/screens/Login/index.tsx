@@ -1,5 +1,6 @@
 import {useForm, Controller} from 'react-hook-form';
 import React, {useState, useCallback} from 'react';
+import Toast from 'react-native-toast-message';
 import Title from '../../components/Title';
 import ScrollView from '../../../../shared/components/ScrollView';
 import Input from '../../../../shared/components/Input';
@@ -28,7 +29,14 @@ const Login = () => {
 
   const onSubmit = useCallback(() => {
     const data = getValues();
-    dispatch(login(data));
+    try {
+      dispatch(login(data));
+    } catch (err) {
+      Toast.show({
+        type: 'error',
+        text1: err as string,
+      });
+    }
   }, [dispatch, getValues]);
 
   return (
