@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Text} from 'react-native';
 
 import {
   color,
@@ -10,10 +11,7 @@ import {
 } from 'styled-system';
 import {TypographyProps} from './types';
 
-const Typography = styled.label<TypographyProps>`
-  line-height: 123%;
-  margin-top: 2px;
-  margin-bottom: 2px;
+const Typography = styled(Text)<TypographyProps>`
   ${fontSize}
   ${fontWeight}
   ${fontFamily}
