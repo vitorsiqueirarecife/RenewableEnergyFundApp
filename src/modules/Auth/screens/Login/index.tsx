@@ -9,14 +9,27 @@ import {Icon} from '../../../../shared/components/Icon';
 import Button from '../../../../shared/components/Button';
 import Typography from '../../../../shared/components/Typography';
 import {TouchableOpacity} from 'react-native';
+import {useDispatch} from 'react-redux';
+import {login} from '../../store';
 
 const Login = () => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
-  const {control} = useForm<LoginForm>();
+  const {control, handleSubmit, getValues} = useForm<LoginForm>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+  });
+  const dispatch = useDispatch();
 
   const toggleIsSecure = useCallback(() => {
     setIsSecureTextEntry(!isSecureTextEntry);
   }, [isSecureTextEntry]);
+
+  const onSubmit = useCallback(() => {
+    const data = getValues();
+    dispatch(login(data));
+  }, [dispatch, getValues]);
 
   return (
     <ScrollView flex={1} paddingX={20}>
@@ -73,7 +86,7 @@ const Login = () => {
       />
 
       <Box marginTop={37}>
-        <Button>Login</Button>
+        <Button onPress={handleSubmit(onSubmit)}>Login</Button>
       </Box>
 
       <Box
