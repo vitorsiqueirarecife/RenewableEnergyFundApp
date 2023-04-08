@@ -6,6 +6,7 @@ import Input from '../../../../shared/components/Input';
 import {LoginForm} from '../../shared/types';
 import Box from '../../../../shared/components/Box';
 import {Icon} from '../../../../shared/components/Icon';
+import Button from '../../../../shared/components/Button';
 
 const Login = () => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
@@ -68,6 +69,10 @@ const Login = () => {
           </Box>
         )}
       />
+
+      <Box marginTop={37}>
+        <Button>Login</Button>
+      </Box>
     </ScrollView>
   );
 };
