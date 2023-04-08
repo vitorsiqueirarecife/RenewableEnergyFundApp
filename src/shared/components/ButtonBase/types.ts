@@ -5,6 +5,8 @@ import {
   BorderProps,
   PositionProps,
   WidthProps,
+  HeightProps,
+  SpaceProps,
   ColorProps,
 } from 'styled-system';
 
@@ -15,4 +17,6 @@ export interface ButtonBaseProps
     BorderProps,
     PositionProps,
     WidthProps,
-    ColorProps {}
+    HeightProps,
+    ColorProps,
+    SpaceProps {}

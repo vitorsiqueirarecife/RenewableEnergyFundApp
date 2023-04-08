@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {TouchableOpacity} from 'react-native';
 import {
   display,
   border,
@@ -7,19 +7,20 @@ import {
   space,
   position,
   width,
+  height,
   color,
 } from 'styled-system';
 
 import {ButtonBaseProps} from './types';
 
-const ButtonBase = styled.button<ButtonBaseProps>`
-  ${color}
+const ButtonBase = styled(TouchableOpacity)<ButtonBaseProps>`
   ${display}
   ${flexbox}
   ${space}
   ${border}
   ${position}
   ${width}
-  cursor: pointer;
+  ${height}
+  ${color}
 `;
 export default ButtonBase;
