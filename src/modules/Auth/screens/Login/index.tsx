@@ -1,14 +1,19 @@
 import {useForm, Controller} from 'react-hook-form';
-import React, {useState} from 'react';
+import React, {useState, useCallback} from 'react';
 import Title from '../../components/Title';
 import ScrollView from '../../../../shared/components/ScrollView';
 import Input from '../../components/Input';
 import {LoginForm} from '../../shared/types';
 import Box from '../../../../shared/components/Box';
+import {Icon} from '../../../../shared/components/Icon';
 
 const Login = () => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
   const {control} = useForm<LoginForm>();
+
+  const toggleIsSecure = useCallback(() => {
+    setIsSecureTextEntry(!isSecureTextEntry);
+  }, [isSecureTextEntry]);
 
   return (
     <ScrollView flex={1} paddingX={20}>
@@ -51,6 +56,14 @@ const Login = () => {
               value={value}
               placeholder="Minimum 8 characters"
               secureTextEntry={isSecureTextEntry}
+              adornment={
+                <Icon
+                  size="large"
+                  color="#A0A0A0"
+                  name={isSecureTextEntry ? 'eye' : 'eye-off'}
+                />
+              }
+              adornmentAction={toggleIsSecure}
             />
           </Box>
         )}
