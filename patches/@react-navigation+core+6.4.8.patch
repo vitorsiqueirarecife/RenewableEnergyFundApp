@@ -1,13 +1,15 @@
 diff --git a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
-index 42792c6..395d56c 100644
+index 42792c6..910331e 100644
 --- a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
 +++ b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
-@@ -133,22 +133,20 @@ declare type NavigationHelpersCommon<ParamList extends ParamListBase, State exte
+@@ -133,22 +133,22 @@ declare type NavigationHelpersCommon<ParamList extends ParamListBase, State exte
       * @param name Name of the route to navigate to.
       * @param [params] Params object for the route.
       */
 -    navigate<RouteName extends keyof ParamList>(...args: RouteName extends unknown ? undefined extends ParamList[RouteName] ? [screen: RouteName] | [screen: RouteName, params: ParamList[RouteName]] : [screen: RouteName, params: ParamList[RouteName]] : never): void;
-+    navigate<RouteName extends keyof ParamList>(...args: undefined extends ParamList[RouteName]  ? [screen: RouteName] | [screen: RouteName, params: ParamList[RouteName]]  : [screen: RouteName, params: ParamList[RouteName]]): void;
++    navigate<RouteName extends keyof ParamList>(...args: undefined extends ParamList[RouteName]
++        ? [screen: RouteName] | [screen: RouteName, params: ParamList[RouteName]]
++        : [screen: RouteName, params: ParamList[RouteName]]): void;
      /**
       * Navigate to a route in current navigation tree.
       *
@@ -18,28 +20,24 @@ index 42792c6..395d56c 100644
 -        params?: ParamList[RouteName];
 -        merge?: boolean;
 -    } | {
--        name: RouteName;
--        key?: string;
--        params: ParamList[RouteName];
--        merge?: boolean;
--    } : never): void;
 +    navigate<RouteName extends keyof ParamList>(options:
 +        | { key: string; params?: ParamList[RouteName]; merge?: boolean }
 +        | {
-+            name: RouteName;
-+            key?: string;
-+            params: ParamList[RouteName];
-+            merge?: boolean;
-+        }): void;
+         name: RouteName;
+         key?: string;
+         params: ParamList[RouteName];
+         merge?: boolean;
+-    } : never): void;
++    }): void;
      /**
       * Reset the navigation state to the provided state.
       *
-@@ -315,14 +313,14 @@ export declare type RouteConfigComponent<ParamList extends ParamListBase, RouteN
+@@ -315,14 +315,14 @@ export declare type RouteConfigComponent<ParamList extends ParamListBase, RouteN
      /**
       * React component to render for this screen.
       */
 -    component: ScreenComponentType<ParamList, RouteName>;
-+    component: React.ComponentType<any>;
++    component: JSX.Element;
      getComponent?: never;
      children?: never;
  } | {
@@ -47,7 +45,79 @@ index 42792c6..395d56c 100644
       * Lazily get a React component to render for this screen.
       */
 -    getComponent: () => ScreenComponentType<ParamList, RouteName>;
-+    getComponent: () => React.ComponentType<any>;
++    getComponent: () => JSX.Element;
      component?: never;
      children?: never;
  } | {
+diff --git a/node_modules/@react-navigation/core/src/types.tsx b/node_modules/@react-navigation/core/src/types.tsx
+index 20685bb..9d6512e 100644
+--- a/node_modules/@react-navigation/core/src/types.tsx
++++ b/node_modules/@react-navigation/core/src/types.tsx
+@@ -180,38 +180,23 @@ type NavigationHelpersCommon<
+    * @param name Name of the route to navigate to.
+    * @param [params] Params object for the route.
+    */
+-  navigate<RouteName extends keyof ParamList>(
+-    ...args: // this first condition allows us to iterate over a union type
+-    // This is to avoid getting a union of all the params from `ParamList[RouteName]`,
+-    // which will get our types all mixed up if a union RouteName is passed in.
+-    RouteName extends unknown
+-      ? // This condition checks if the params are optional,
+-        // which means it's either undefined or a union with undefined
+-        undefined extends ParamList[RouteName]
+-        ?
+-            | [screen: RouteName] // if the params are optional, we don't have to provide it
+-            | [screen: RouteName, params: ParamList[RouteName]]
+-        : [screen: RouteName, params: ParamList[RouteName]]
+-      : never
+-  ): void;
++  navigate<RouteName extends keyof ParamList>(...args: undefined extends ParamList[RouteName]
++    ? [screen: RouteName] | [screen: RouteName, params: ParamList[RouteName]]
++    : [screen: RouteName, params: ParamList[RouteName]]): void;
+ 
+   /**
+    * Navigate to a route in current navigation tree.
+    *
+    * @param route Object with `key` or `name` for the route to navigate to, and a `params` object.
+    */
+-  navigate<RouteName extends keyof ParamList>(
+-    options: RouteName extends unknown
+-      ?
+-          | { key: string; params?: ParamList[RouteName]; merge?: boolean }
+-          | {
+-              name: RouteName;
+-              key?: string;
+-              params: ParamList[RouteName];
+-              merge?: boolean;
+-            }
+-      : never
+-  ): void;
++  navigate<RouteName extends keyof ParamList>(options:
++      | { key: string; params?: ParamList[RouteName]; merge?: boolean }
++      | {
++      name: RouteName;
++      key?: string;
++      params: ParamList[RouteName];
++      merge?: boolean;
++  }): void;
+ 
+   /**
+    * Reset the navigation state to the provided state.
+@@ -458,7 +443,7 @@ export type RouteConfigComponent<
+       /**
+        * React component to render for this screen.
+        */
+-      component: ScreenComponentType<ParamList, RouteName>;
++      component: JSX.Element;
+       getComponent?: never;
+       children?: never;
+     }
+@@ -466,7 +451,7 @@ export type RouteConfigComponent<
+       /**
+        * Lazily get a React component to render for this screen.
+        */
+-      getComponent: () => ScreenComponentType<ParamList, RouteName>;
++      getComponent: () => JSX.Element;
+       component?: never;
+       children?: never;
+     }
