@@ -5,10 +5,10 @@ import ButtonBase from '../ButtonBase';
 
 const Button = ({children, variant, ...rest}: Props) => {
   const style: Style = useMemo(() => {
-    if (variant === 'primary') {
+    if (variant === 'success') {
       return {
-        backgroundColor: '#770FDF',
-        borderColor: '#770FDF',
+        backgroundColor: '#0FDF8F',
+        borderColor: '#0FDF8F',
         textColor: '#FFFFFF',
       };
     }
@@ -22,8 +22,8 @@ const Button = ({children, variant, ...rest}: Props) => {
     }
 
     return {
-      backgroundColor: '#0FDF8F',
-      borderColor: '#0FDF8F',
+      backgroundColor: '#770FDF',
+      borderColor: '#770FDF',
       textColor: '#FFFFFF',
     };
   }, [variant]);
