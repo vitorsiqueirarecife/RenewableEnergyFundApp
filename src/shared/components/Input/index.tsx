@@ -33,7 +33,7 @@ const Input = ({title, error, adornment, adornmentAction, ...rest}: Props) => {
           </TouchableOpacity>
         </Box>
       </Box>
-      {error && (
+      {error?.message && (
         <Box>
           <Typography color="red" fontSize={11}>
             {error.message}
