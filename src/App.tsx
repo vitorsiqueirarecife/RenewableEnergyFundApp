@@ -4,7 +4,7 @@ import SafeAreaView from './shared/components/SafeAreaView';
 
 function App() {
   return (
-    <SafeAreaView flex={1}>
+    <SafeAreaView backgroundColor="#FFF" flex={1}>
       <Routes />
     </SafeAreaView>
   );
