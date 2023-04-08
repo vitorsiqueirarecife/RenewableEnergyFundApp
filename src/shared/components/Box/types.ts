@@ -10,10 +10,6 @@ import {
   TextAlignProps,
 } from 'styled-system';
 
-export type ExtraTypes = {
-  backgroundImage?: string;
-};
-
 export type BoxProps = SpaceProps &
   ColorProps &
   LayoutProps &
@@ -21,8 +17,7 @@ export type BoxProps = SpaceProps &
   GridProps &
   BorderProps &
   PositionProps &
-  TextAlignProps &
-  ExtraTypes;
+  TextAlignProps;
 export interface Props extends BoxProps {
   children: ReactNode;
 }
