@@ -7,6 +7,8 @@ import {LoginForm} from '../../shared/types';
 import Box from '../../../../shared/components/Box';
 import {Icon} from '../../../../shared/components/Icon';
 import Button from '../../../../shared/components/Button';
+import Typography from '../../../../shared/components/Typography';
+import {TouchableOpacity} from 'react-native';
 
 const Login = () => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
@@ -72,6 +74,26 @@ const Login = () => {
 
       <Box marginTop={37}>
         <Button>Login</Button>
+      </Box>
+
+      <Box
+        marginTop={13}
+        display="flex"
+        flexDirection="row"
+        width="100%"
+        justifyContent="center">
+        <Typography fontSize={12} color="#A0A0A0">
+          Don’t have an account?{' '}
+        </Typography>
+        <TouchableOpacity onPress={() => {}}>
+          <Typography fontSize={12} color="#A0A0A0" textDecoration>
+            Sign up
+          </Typography>
+        </TouchableOpacity>
+        <Typography fontSize={12} color="#A0A0A0">
+          {' '}
+          here
+        </Typography>
       </Box>
     </ScrollView>
   );
