@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import {View} from 'react-native';
 import {
   color,
   space,
@@ -13,9 +13,7 @@ import {
 
 import {BoxProps} from './types';
 
-const Box = styled.section<BoxProps>`
-  background-image: url(${p => p.backgroundImage});
-
+const Box = styled(View)<BoxProps>`
   ${color}
   ${space}
   ${layout}
