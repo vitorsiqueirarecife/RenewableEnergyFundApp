@@ -24,11 +24,16 @@ function Routes() {
       )}
 
       {isLogged && (
-        <Tab.Navigator>
-          <Tab.Screen name="Home" component={<Home />} />
-          <Tab.Screen name="Trade" component={<Trade />} />
-          <Tab.Screen name="Portfolio" component={<Portfolio />} />
-        </Tab.Navigator>
+        <Stack.Screen
+          name="Init"
+          component={
+            <Tab.Navigator>
+              <Tab.Screen name="Home" component={<Home />} />
+              <Tab.Screen name="Trade" component={<Trade />} />
+              <Tab.Screen name="Portfolio" component={<Portfolio />} />
+            </Tab.Navigator>
+          }
+        />
       )}
     </NavigationContainer>
   );

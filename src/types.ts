@@ -11,6 +11,7 @@ export type TabParamList = {
 export type RootStackParamList = {
   Auth: undefined;
   Register: undefined;
+  Init: undefined;
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =
