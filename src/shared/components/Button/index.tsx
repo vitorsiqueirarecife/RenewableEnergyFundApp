@@ -30,7 +30,11 @@ const Button = ({children, variant, ...rest}: Props) => {
 
   return (
     <ButtonBase
-      borderRadius={2}
+      height={58}
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+      borderRadius={4}
       width="100%"
       paddingY={10}
       border={1}
