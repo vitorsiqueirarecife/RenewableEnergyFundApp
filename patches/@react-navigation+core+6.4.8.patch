@@ -1,5 +1,5 @@
 diff --git a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
-index 42792c6..910331e 100644
+index 42792c6..08b66d2 100644
 --- a/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
 +++ b/node_modules/@react-navigation/core/lib/typescript/src/types.d.ts
 @@ -133,22 +133,22 @@ declare type NavigationHelpersCommon<ParamList extends ParamListBase, State exte
@@ -37,7 +37,7 @@ index 42792c6..910331e 100644
       * React component to render for this screen.
       */
 -    component: ScreenComponentType<ParamList, RouteName>;
-+    component: JSX.Element;
++    component: React.ElementType<any>;
      getComponent?: never;
      children?: never;
  } | {
@@ -45,12 +45,12 @@ index 42792c6..910331e 100644
       * Lazily get a React component to render for this screen.
       */
 -    getComponent: () => ScreenComponentType<ParamList, RouteName>;
-+    getComponent: () => JSX.Element;
++    getComponent: () => React.ElementType<any>;
      component?: never;
      children?: never;
  } | {
 diff --git a/node_modules/@react-navigation/core/src/types.tsx b/node_modules/@react-navigation/core/src/types.tsx
-index 20685bb..9d6512e 100644
+index 20685bb..b24960c 100644
 --- a/node_modules/@react-navigation/core/src/types.tsx
 +++ b/node_modules/@react-navigation/core/src/types.tsx
 @@ -180,38 +180,23 @@ type NavigationHelpersCommon<
@@ -108,7 +108,7 @@ index 20685bb..9d6512e 100644
         * React component to render for this screen.
         */
 -      component: ScreenComponentType<ParamList, RouteName>;
-+      component: JSX.Element;
++      component: React.ElementType<any>;
        getComponent?: never;
        children?: never;
      }
@@ -117,7 +117,7 @@ index 20685bb..9d6512e 100644
         * Lazily get a React component to render for this screen.
         */
 -      getComponent: () => ScreenComponentType<ParamList, RouteName>;
-+      getComponent: () => JSX.Element;
++      getComponent: () => React.ElementType<any>;
        component?: never;
        children?: never;
      }
