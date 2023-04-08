@@ -10,7 +10,9 @@ export type TypographyProps = TextColorProps &
   TypographySSProps &
   LineHeightProps &
   FontSizeProps &
-  FontWeightProps;
+  FontWeightProps & {
+    textDecoration?: boolean;
+  };
 
 export interface Props extends TypographyProps {
   children: string;

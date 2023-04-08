@@ -5,6 +5,7 @@ import {
   color,
   fontFamily,
   fontStyle,
+  textStyle,
   textAlign,
   fontWeight,
   fontSize,
@@ -18,6 +19,13 @@ const Typography = styled(Text)<TypographyProps>`
   ${fontStyle}
   ${color}
   ${textAlign}
+  ${textStyle}
+  text-decoration: ${({textDecoration}) => {
+    if (textDecoration === true) {
+      return 'underline';
+    }
+    return 'none';
+  }};
 `;
 
 export default Typography;
