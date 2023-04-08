@@ -8,6 +8,7 @@ import Auth from './modules/Auth/Screens/Auth/Auth';
 import Register from './modules/Auth/Screens/Register/Register';
 import Portfolio from './modules/Wallet/Screens/Portfolio';
 import Trade from './modules/Wallet/Screens/Trade';
+import AssetDetails from './modules/Asset/Screens/AssetDetails';
 
 function Routes() {
   const isLogged = true;
@@ -24,16 +25,19 @@ function Routes() {
       )}
 
       {isLogged && (
-        <Stack.Screen
-          name="Init"
-          component={
-            <Tab.Navigator>
-              <Tab.Screen name="Home" component={<Home />} />
-              <Tab.Screen name="Trade" component={<Trade />} />
-              <Tab.Screen name="Portfolio" component={<Portfolio />} />
-            </Tab.Navigator>
-          }
-        />
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Init"
+            component={
+              <Tab.Navigator>
+                <Tab.Screen name="Home" component={<Home />} />
+                <Tab.Screen name="Trade" component={<Trade />} />
+                <Tab.Screen name="Portfolio" component={<Portfolio />} />
+              </Tab.Navigator>
+            }
+          />
+          <Stack.Screen name="AssetDetails" component={<AssetDetails />} />
+        </Stack.Navigator>
       )}
     </NavigationContainer>
   );
