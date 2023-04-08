@@ -12,9 +12,13 @@ import Typography from '../../../../shared/components/Typography';
 import {TouchableOpacity} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {login} from '../../store';
+import {useNavigation} from '@react-navigation/native';
+import {RootNavigationProps} from '../../../../routes/types';
 
 const Login = () => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
+  const {navigate} = useNavigation<RootNavigationProps<'Register'>>();
+
   const {control, handleSubmit, getValues} = useForm<LoginForm>({
     defaultValues: {
       email: '',
@@ -38,6 +42,10 @@ const Login = () => {
       });
     }
   }, [dispatch, getValues]);
+
+  const goToRegister = useCallback(() => {
+    navigate('Register');
+  }, [navigate]);
 
   return (
     <ScrollView flex={1} paddingX={20}>
@@ -107,7 +115,7 @@ const Login = () => {
         <Typography fontSize={12} color="#A0A0A0">
           Don’t have an account?{' '}
         </Typography>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={goToRegister}>
           <Typography fontSize={12} color="#A0A0A0" textDecoration>
             Sign up
           </Typography>

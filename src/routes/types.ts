@@ -1,6 +1,9 @@
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 import type {CompositeScreenProps} from '@react-navigation/native';
-import type {NativeStackScreenProps} from '@react-navigation/native-stack';
+import type {
+  NativeStackNavigationProp,
+  NativeStackScreenProps,
+} from '@react-navigation/native-stack';
 
 export type TabParamList = {
   Home: undefined;
@@ -22,6 +25,9 @@ export type TabScreenProps<T extends keyof TabParamList> = CompositeScreenProps<
   BottomTabScreenProps<TabParamList, T>,
   RootStackScreenProps<keyof RootStackParamList>
 >;
+
+export type RootNavigationProps<T extends keyof RootStackParamList> =
+  NativeStackNavigationProp<RootStackParamList, T>;
 
 declare global {
   namespace ReactNavigation {
