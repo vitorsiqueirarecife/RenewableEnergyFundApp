@@ -1,7 +1,7 @@
 import React from 'react';
-import Box from '../../../../shared/components/Box';
-import {InputBase} from '../../../../shared/components/InputBase';
-import Typography from '../../../../shared/components/Typography';
+import Box from '../Box';
+import {InputBase} from '../InputBase';
+import Typography from '../Typography';
 import {Props} from './types';
 import {TouchableOpacity} from 'react-native';
 

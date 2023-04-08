@@ -2,7 +2,7 @@ import {useForm, Controller} from 'react-hook-form';
 import React, {useState, useCallback} from 'react';
 import Title from '../../components/Title';
 import ScrollView from '../../../../shared/components/ScrollView';
-import Input from '../../components/Input';
+import Input from '../../../../shared/components/Input';
 import {LoginForm} from '../../shared/types';
 import Box from '../../../../shared/components/Box';
 import {Icon} from '../../../../shared/components/Icon';
