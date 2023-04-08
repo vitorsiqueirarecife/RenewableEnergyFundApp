@@ -63,7 +63,7 @@ const Register = () => {
   }, [dispatch, getValues, navigate]);
 
   return (
-    <ScrollView flex={1} paddingX={20} paddingBottom={40}>
+    <ScrollView flex={1} paddingX={20}>
       <Header handleBack={goBack}>
         <Box height={5} width={50} backgroundColor="#e8e8e8" marginRight={2} />
         <Box height={5} width={50} backgroundColor="#e8e8e8" marginRight={2} />
@@ -190,7 +190,8 @@ const Register = () => {
         display="flex"
         flexDirection="row"
         width="100%"
-        justifyContent="center">
+        justifyContent="center"
+        marginBottom={100}>
         <Typography fontSize={12} color="#A0A0A0">
           Already have an account?{' '}
         </Typography>

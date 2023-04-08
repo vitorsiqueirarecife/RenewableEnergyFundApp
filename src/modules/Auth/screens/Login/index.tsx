@@ -111,7 +111,8 @@ const Login = () => {
         display="flex"
         flexDirection="row"
         width="100%"
-        justifyContent="center">
+        justifyContent="center"
+        marginBottom={100}>
         <Typography fontSize={12} color="#A0A0A0">
           Don’t have an account?{' '}
         </Typography>
