@@ -48,6 +48,7 @@ const Login = () => {
               error={errors.email}
               onChangeText={onChange}
               value={value}
+              placeholder="Type your e-mail"
             />
           </Box>
         )}
@@ -67,7 +68,7 @@ const Login = () => {
           <Box marginY={12}>
             <Input
               title="Password"
-              error={errors.email}
+              error={errors.password}
               onChangeText={onChange}
               value={value}
               placeholder="Minimum 8 characters"
