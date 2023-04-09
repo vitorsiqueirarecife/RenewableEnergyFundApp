@@ -25,11 +25,11 @@ const Register = () => {
   const {control, handleSubmit, getValues, setValue, watch} = useForm<User>({
     defaultValues: {
       id: '',
-      firstName: '',
-      lastName: '',
-      email: '',
-      password: '',
-      agreeTerms: false,
+      firstName: 'MyFirstName',
+      lastName: 'MyLstName',
+      email: 'email@email.com',
+      password: '12345678',
+      agreeTerms: true,
     },
   });
   const dispatch = useDispatch();

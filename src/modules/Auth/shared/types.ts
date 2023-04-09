@@ -1,6 +1,6 @@
 export type Auth = {
   Users?: User[];
-  Session?: User;
+  Session?: User | null;
 };
 
 export type User = {

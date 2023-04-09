@@ -17,12 +17,12 @@ import {RootNavigationProps} from '../../../../routes/types';
 
 const Login = () => {
   const [isSecureTextEntry, setIsSecureTextEntry] = useState(true);
-  const {navigate} = useNavigation<RootNavigationProps<'Register'>>();
+  const {navigate} = useNavigation<RootNavigationProps<'Register' | 'Init'>>();
 
   const {control, handleSubmit, getValues} = useForm<LoginForm>({
     defaultValues: {
-      email: '',
-      password: '',
+      email: 'email@email.com',
+      password: '12345678',
     },
   });
   const dispatch = useDispatch();
@@ -32,16 +32,22 @@ const Login = () => {
   }, [isSecureTextEntry]);
 
   const onSubmit = useCallback(() => {
+    console.log('here');
     const data = getValues();
     try {
       dispatch(login(data));
+      Toast.show({
+        type: 'success',
+        text1: 'Login successful',
+      });
+      navigate('Init');
     } catch (err) {
       Toast.show({
         type: 'error',
         text1: err as string,
       });
     }
-  }, [dispatch, getValues]);
+  }, [dispatch, getValues, navigate]);
 
   const goToRegister = useCallback(() => {
     navigate('Register');
