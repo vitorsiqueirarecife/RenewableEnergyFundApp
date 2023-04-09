@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '../../../../shared/components/Box';
 
-const Home = () => {
+const Explore = () => {
   return (
     <Box flex={1} backgroundColor="red">
       <Box />
@@ -9,4 +9,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Explore;

@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {TabParamList} from './types';
-import Home from '../modules/Home/screens/Home';
+import Explore from '../modules/Home/screens/Explore';
 import Trade from '../modules/Wallet/screens/Trade';
 import Portfolio from '../modules/Wallet/screens/Portfolio';
 import {Icon} from '../shared/components/Icon';
@@ -45,7 +45,7 @@ function Tabs() {
       }}>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={Explore}
         options={{
           tabBarIcon: homeIcon,
         }}
