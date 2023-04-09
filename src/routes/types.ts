@@ -29,8 +29,6 @@ export type TabScreenProps<T extends keyof TabParamList> = CompositeScreenProps<
 export type RootNavigationProps<T extends keyof RootStackParamList> =
   NativeStackNavigationProp<RootStackParamList, T>;
 
-declare global {
-  namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
-  }
-}
+export type IconProps = {
+  color: string;
+};
