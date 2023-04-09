@@ -1,0 +1,58 @@
+import {Found} from './FundItem/types';
+
+export const mockFunds: Found[] = [
+  {
+    id: '493267498329',
+    iconColor: '#4A88D0',
+    iconName: 'weather-windy',
+    name: 'Wind Fund',
+    value: 1032.23,
+    variation: 3.51,
+    variationPoints: [0.3, 2.1, 1.5, 3.1, 1.3, 4.4, 4.8],
+  },
+  {
+    id: '845037498237',
+    iconColor: '#F0A719',
+    iconName: 'weather-sunny',
+    name: 'Solar Fund',
+    value: 986.61,
+    variation: -0.13,
+    variationPoints: [3.3, 1.1, -3.5, 1.1, 1.3, 2.4, 1.8],
+  },
+  {
+    id: '2347847328',
+    iconColor: '#0FDF8F',
+    iconName: 'tree-outline',
+    name: 'Nature',
+    value: 1122.95,
+    variation: 0,
+    variationPoints: [1.3, 4.1, 2.5, 5.1, 2.3, 2.4, 1.3],
+  },
+  {
+    id: '493267498329',
+    iconColor: '#4A88D0',
+    iconName: 'weather-windy',
+    name: 'Wind Fund',
+    value: 1032.23,
+    variation: 3.51,
+    variationPoints: [0.3, 2.1, 1.5, 3.1, 1.3, 4.4, 4.8],
+  },
+  {
+    id: '845037498237',
+    iconColor: '#F0A719',
+    iconName: 'weather-sunny',
+    name: 'Solar Fund',
+    value: 986.61,
+    variation: -0.13,
+    variationPoints: [3.3, 1.1, -3.5, 1.1, 1.3, 2.4, 1.8],
+  },
+  {
+    id: '2347847328',
+    iconColor: '#0FDF8F',
+    iconName: 'tree-outline',
+    name: 'Nature',
+    value: 1122.95,
+    variation: 0,
+    variationPoints: [1.3, 4.1, 2.5, 5.1, 2.3, 2.4, 1.3],
+  },
+];
