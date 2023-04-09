@@ -3,6 +3,7 @@ export const IconSizes = {
   medium: 18,
   large: 23,
   extraLarge: 27,
+  extraLarge1: 33,
 };
 
 type IconSizeProps = {
