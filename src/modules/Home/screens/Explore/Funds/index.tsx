@@ -15,27 +15,7 @@ const Funds = () => {
       </Box>
       <ScrollView height={170} marginBottom={10} horizontal>
         {mockFunds.map(fundItem => {
-          const {
-            id,
-            iconColor,
-            iconName,
-            name,
-            value,
-            variation,
-            variationPoints,
-          } = fundItem;
-
-          return (
-            <FundItem
-              key={id}
-              iconColor={iconColor}
-              iconName={iconName}
-              name={name}
-              value={value}
-              variation={variation}
-              variationPoints={variationPoints}
-            />
-          );
+          return <FundItem key={fundItem.id} {...fundItem} />;
         })}
       </ScrollView>
     </Box>

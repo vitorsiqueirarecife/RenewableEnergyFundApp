@@ -3,9 +3,12 @@ export type Fund = {
   iconName: string;
   iconColor: string;
   name: string;
-  variation: number;
   value: number;
+  variation: number;
+  variationValue: number;
   variationPoints: number[];
+  code: string;
+  year: string;
 };
 
 export type Props = Fund;
