@@ -2,14 +2,25 @@ import {Props, Style} from './types';
 import React, {useMemo} from 'react';
 import Typography from '../Typography';
 import ButtonBase from '../ButtonBase';
+import {Icon} from '../Icon';
+import Box from '../Box';
 
-const Button = ({children, variant, ...rest}: Props) => {
+const Button = ({
+  children,
+  variant,
+  fontSize = 16,
+  fontWeight = '500',
+  iconName,
+  height = 58,
+  ...rest
+}: Props) => {
   const style: Style = useMemo(() => {
     if (variant === 'success') {
       return {
         backgroundColor: '#0FDF8F',
         borderColor: '#0FDF8F',
         textColor: '#FFFFFF',
+        iconColor: '#FFFFFF',
       };
     }
 
@@ -18,6 +29,16 @@ const Button = ({children, variant, ...rest}: Props) => {
         backgroundColor: '#FFFFFF',
         borderColor: '#CFCFCF',
         textColor: '#770FDF',
+        iconColor: '#770FDF',
+      };
+    }
+
+    if (variant === 'tertiary') {
+      return {
+        backgroundColor: '#F7EFFF',
+        borderColor: '#F7EFFF',
+        textColor: '#770FDF',
+        iconColor: '#770FDF',
       };
     }
 
@@ -25,13 +46,15 @@ const Button = ({children, variant, ...rest}: Props) => {
       backgroundColor: '#770FDF',
       borderColor: '#770FDF',
       textColor: '#FFFFFF',
+      iconColor: '#FFFFFF',
     };
   }, [variant]);
 
   return (
     <ButtonBase
-      height={58}
+      height={height}
       display="flex"
+      flexDirection="row"
       alignItems="center"
       justifyContent="center"
       borderRadius={4}
@@ -41,7 +64,15 @@ const Button = ({children, variant, ...rest}: Props) => {
       backgroundColor={style.backgroundColor}
       borderColor={style.borderColor}
       {...rest}>
-      <Typography fontSize={16} fontWeight="500" color={style.textColor}>
+      {iconName && (
+        <Box marginX={2}>
+          <Icon size="medium" color={style.iconColor} name={iconName} />
+        </Box>
+      )}
+      <Typography
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+        color={style.textColor}>
         {children}
       </Typography>
     </ButtonBase>

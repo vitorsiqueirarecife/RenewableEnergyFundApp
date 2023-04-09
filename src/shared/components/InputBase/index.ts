@@ -5,7 +5,7 @@ import {InputBaseProps} from './types';
 
 export const InputBase = styled(TextInput)<InputBaseProps>`
   ${border}
-  background-color: #e8e8e8;
+  background-color: #F4F4F4;
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 4px;

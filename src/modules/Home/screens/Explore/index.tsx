@@ -9,7 +9,7 @@ import Box from '../../../../shared/components/Box';
 
 const Explore = () => {
   return (
-    <ScrollView flex={1}>
+    <ScrollView flex={1} backgroundColor="#fff">
       <Header />
       <Summary />
       <Funds />

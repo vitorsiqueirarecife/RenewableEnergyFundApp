@@ -54,7 +54,7 @@ const Login = () => {
   }, [navigate]);
 
   return (
-    <ScrollView flex={1} paddingX={20}>
+    <ScrollView flex={1} paddingX={20} backgroundColor="#fff">
       <Box marginTop={95}>
         <Title>Login</Title>
       </Box>

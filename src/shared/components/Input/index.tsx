@@ -16,7 +16,7 @@ const Input = ({title, error, adornment, adornmentAction, ...rest}: Props) => {
       <Box flex={1} position="relative" width="100%">
         <InputBase
           multiline={false}
-          border={error ? '1px solid red' : '1px solid #e8e8e8'}
+          border={error ? '1px solid red' : '1px solid #F4F4F4'}
           placeholderTextColor="#CFCFCF"
           {...rest}
         />

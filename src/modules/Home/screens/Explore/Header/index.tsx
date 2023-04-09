@@ -6,8 +6,12 @@ import Typography from '../../../../../shared/components/Typography';
 
 const Header = () => {
   return (
-    <Box display="flex" flexDirection="row" height={65} marginTop={2}>
-      <Box display="flex" justifyContent="center" alignItems="center" flex={1}>
+    <Box display="flex" flexDirection="row" height={75} paddingX={20}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="flex-start"
+        flex={1}>
         <TouchableOpacity>
           <Icon
             size="extraLarge1"
@@ -21,7 +25,11 @@ const Header = () => {
           Account: $1,457.23
         </Typography>
       </Box>
-      <Box display="flex" justifyContent="center" alignItems="center" flex={1}>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="flex-end"
+        flex={1}>
         <TouchableOpacity>
           <Icon size="extraLarge" color="#3a3a3a" name="bell-outline" />
         </TouchableOpacity>
