@@ -1,3 +1,12 @@
+import {ImageSourcePropType} from 'react-native';
+
+export type News = {
+  id: string;
+  image: ImageSourcePropType;
+  logo: ImageSourcePropType;
+  text: string;
+};
+
 export type Fund = {
   id: string;
   iconName: string;
@@ -15,4 +24,5 @@ export type Fund = {
   ter: string;
   priceAtClose: string;
   priceAtOpen: string;
+  news?: News[];
 };

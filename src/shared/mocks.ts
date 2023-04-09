@@ -1,4 +1,7 @@
 import {Fund} from './models';
+import breakdown from '../modules/Asset/assets/breakdown.png';
+import aspiradac from '../modules/Asset/assets/aspiradac.png';
+import climeworks from '../modules/Asset/assets/climeworks.png';
 
 export const mockFunds: Fund[] = [
   {
@@ -18,6 +21,20 @@ export const mockFunds: Fund[] = [
     ter: '0.15%',
     priceAtClose: '$17.68',
     priceAtOpen: '$17.74',
+    news: [
+      {
+        id: '328392180931',
+        image: breakdown,
+        logo: aspiradac,
+        text: 'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+      },
+      {
+        id: '8923048204',
+        image: breakdown,
+        logo: climeworks,
+        text: 'uses renewable geothermal energy and waste heat to capture CO₂ directly from the air.',
+      },
+    ],
   },
   {
     id: '845037498237',
@@ -36,6 +53,20 @@ export const mockFunds: Fund[] = [
     ter: '0.15%',
     priceAtClose: '$17.68',
     priceAtOpen: '$17.74',
+    news: [
+      {
+        id: '328392180931',
+        image: breakdown,
+        logo: aspiradac,
+        text: 'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+      },
+      {
+        id: '8923048204',
+        image: breakdown,
+        logo: climeworks,
+        text: 'uses renewable geothermal energy and waste heat to capture CO₂ directly from the air.',
+      },
+    ],
   },
   {
     id: '2347847328',
@@ -54,5 +85,19 @@ export const mockFunds: Fund[] = [
     ter: '0.15%',
     priceAtClose: '$17.68',
     priceAtOpen: '$17.74',
+    news: [
+      {
+        id: '328392180931',
+        image: breakdown,
+        logo: aspiradac,
+        text: 'Aspira is building a modular, direct air capture system with the energy supply integrated into the modules.',
+      },
+      {
+        id: '8923048204',
+        image: breakdown,
+        logo: climeworks,
+        text: 'uses renewable geothermal energy and waste heat to capture CO₂ directly from the air.',
+      },
+    ],
   },
 ];

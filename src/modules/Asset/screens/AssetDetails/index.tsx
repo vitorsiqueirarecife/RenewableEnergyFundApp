@@ -12,6 +12,7 @@ import ScrollView from '../../../../shared/components/ScrollView';
 import Display from './Display';
 import Info from './Info';
 import {mockFunds} from '../../../../shared/mocks';
+import Breakdown from './Breakdown';
 
 const AssetDetails = () => {
   const {goBack} = useNavigation<RootNavigationProps<'Init'>>();
@@ -43,6 +44,7 @@ const AssetDetails = () => {
 
       {data && <Display asset={data} />}
       {data && <Info asset={data} />}
+      {data && <Breakdown asset={data} />}
     </ScrollView>
   );
 };
