@@ -15,7 +15,9 @@ export type RootStackParamList = {
   Login: undefined;
   Register: undefined;
   Init: undefined;
-  AssetDetails: undefined;
+  AssetDetails: {
+    id: string;
+  };
 };
 
 export type RootStackScreenProps<T extends keyof RootStackParamList> =

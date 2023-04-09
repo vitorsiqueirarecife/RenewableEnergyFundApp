@@ -1,4 +1,5 @@
-type FoundBase = {
+export type Found = {
+  id: string;
   iconName: string;
   iconColor: string;
   name: string;
@@ -7,8 +8,4 @@ type FoundBase = {
   variationPoints: number[];
 };
 
-export type Found = FoundBase & {
-  id: string;
-};
-
-export type Props = FoundBase;
+export type Props = Found;
