@@ -4,7 +4,13 @@ import {Props} from './types';
 import {style} from './styles';
 import {AbstractChartConfig} from 'react-native-chart-kit/dist/AbstractChart';
 
-const LineChart = ({lineColor, variationPoints, height, width}: Props) => {
+const LineChart = ({
+  lineColor,
+  variationPoints,
+  height,
+  width,
+  isBezier = true,
+}: Props) => {
   const chartConfig: AbstractChartConfig = useMemo(() => {
     return {
       backgroundGradientFrom: '#FFF',
@@ -45,7 +51,7 @@ const LineChart = ({lineColor, variationPoints, height, width}: Props) => {
       withVerticalLines={false}
       withScrollableDot={false}
       chartConfig={chartConfig}
-      bezier
+      bezier={isBezier}
     />
   );
 };

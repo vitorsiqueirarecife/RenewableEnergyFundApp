@@ -3,4 +3,5 @@ export type Props = {
   variationPoints: number[];
   width: number;
   height: number;
+  isBezier?: boolean;
 };

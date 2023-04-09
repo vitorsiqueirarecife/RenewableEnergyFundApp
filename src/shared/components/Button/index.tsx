@@ -12,6 +12,7 @@ const Button = ({
   fontWeight = '500',
   iconName,
   height = 58,
+  paddingY = 10,
   ...rest
 }: Props) => {
   const style: Style = useMemo(() => {
@@ -42,6 +43,15 @@ const Button = ({
       };
     }
 
+    if (variant === 'transparent') {
+      return {
+        backgroundColor: 'transparent',
+        borderColor: 'transparent',
+        textColor: '#A0A0A0',
+        iconColor: '#A0A0A0',
+      };
+    }
+
     return {
       backgroundColor: '#770FDF',
       borderColor: '#770FDF',
@@ -59,7 +69,7 @@ const Button = ({
       justifyContent="center"
       borderRadius={4}
       width="100%"
-      paddingY={10}
+      paddingY={paddingY}
       border={1}
       backgroundColor={style.backgroundColor}
       borderColor={style.borderColor}

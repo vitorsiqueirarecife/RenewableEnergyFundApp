@@ -5,7 +5,7 @@ import {
   TextColorProps,
 } from 'styled-system';
 
-type Variant = 'primary' | 'secondary' | 'tertiary' | 'success';
+type Variant = 'primary' | 'secondary' | 'tertiary' | 'success' | 'transparent';
 
 export interface Props extends TouchableOpacityProps {
   children: string;
@@ -14,6 +14,7 @@ export interface Props extends TouchableOpacityProps {
   iconName?: string;
   fontSize?: number;
   fontWeight?: string;
+  paddingY?: number;
 }
 
 export type Style = {

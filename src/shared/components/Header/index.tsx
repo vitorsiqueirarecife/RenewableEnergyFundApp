@@ -14,17 +14,20 @@ const Header = ({children, handleBack}: Props) => {
       borderBottomWidth={1}
       borderBottomColor="#d6d6d6"
       height={90}>
-      <TouchableOpacity onPress={handleBack}>
-        <Icon size="large" color="#000000" name="arrow-left" />
-      </TouchableOpacity>
+      <Box flex={1}>
+        <TouchableOpacity onPress={handleBack}>
+          <Icon size="large" color="#000000" name="arrow-left" />
+        </TouchableOpacity>
+      </Box>
       <Box
         display="flex"
-        flex={1}
+        flex={3}
         flexDirection="row"
         justifyContent="center"
         alignItems="center">
         {children}
       </Box>
+      <Box flex={1} />
     </Box>
   );
 };
