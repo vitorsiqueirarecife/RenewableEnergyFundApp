@@ -3,7 +3,7 @@ import Box from '../../../../shared/components/Box';
 
 const Portfolio = () => {
   return (
-    <Box flex={1} backgroundColor="blue">
+    <Box flex={1} backgroundColor="#FFF">
       <Box />
     </Box>
   );
