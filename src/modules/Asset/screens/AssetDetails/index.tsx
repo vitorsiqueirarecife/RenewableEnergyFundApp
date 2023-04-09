@@ -1,11 +1,46 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import Box from '../../../../shared/components/Box';
+import {RouteProp, useNavigation, useRoute} from '@react-navigation/native';
+import {
+  RootNavigationProps,
+  RootStackParamList,
+} from '../../../../routes/types';
+import {mockFunds} from '../../../Home/screens/Explore/Funds/mock';
+import Header from '../../../../shared/components/Header';
+import Typography from '../../../../shared/components/Typography';
+import ScrollView from '../../../../shared/components/ScrollView';
+import Display from './Display';
 
 const AssetDetails = () => {
+  const {goBack} = useNavigation<RootNavigationProps<'Init'>>();
+  const {params} = useRoute<RouteProp<RootStackParamList, 'AssetDetails'>>();
+
+  const data = useMemo(() => {
+    // this code can be change unsing React Query (https://github.com/tanstack/query)
+    return mockFunds.find(fund => {
+      return fund.id === params.id;
+    });
+  }, [params.id]);
+
   return (
-    <Box flex={1} backgroundColor="red">
-      <Box />
-    </Box>
+    <ScrollView flex={1} backgroundColor="#FFF">
+      <Header handleBack={goBack}>
+        <Box
+          flex={1}
+          display="flex"
+          justifyContent="center"
+          alignItems="center">
+          <Typography color="#000000" fontSize={17} fontWeight="600">
+            {data?.name}
+          </Typography>
+          <Typography color="#808080" fontSize={14} fontWeight="400">
+            {data?.code}
+          </Typography>
+        </Box>
+      </Header>
+
+      {data && <Display asset={data} />}
+    </ScrollView>
   );
 };
 
