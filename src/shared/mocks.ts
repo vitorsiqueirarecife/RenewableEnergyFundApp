@@ -1,4 +1,4 @@
-import {Fund} from './FundItem/types';
+import {Fund} from './models';
 
 export const mockFunds: Fund[] = [
   {
@@ -12,6 +12,12 @@ export const mockFunds: Fund[] = [
     variationPoints: [0.3, 2.1, 1.5, 3.1, 1.3, 4.4, 4.8],
     code: 'WFND',
     year: '2023',
+    aum: '$430.88m',
+    issueDate: '18/04/2022',
+    vintageRange: '2019 – 2022',
+    ter: '0.15%',
+    priceAtClose: '$17.68',
+    priceAtOpen: '$17.74',
   },
   {
     id: '845037498237',
@@ -24,6 +30,12 @@ export const mockFunds: Fund[] = [
     variationPoints: [3.3, 1.1, -3.5, 1.1, 1.3, 2.4, 1.8],
     code: 'SOLA',
     year: '2023',
+    aum: '$430.88m',
+    issueDate: '18/04/2022',
+    vintageRange: '2019 – 2022',
+    ter: '0.15%',
+    priceAtClose: '$17.68',
+    priceAtOpen: '$17.74',
   },
   {
     id: '2347847328',
@@ -36,5 +48,11 @@ export const mockFunds: Fund[] = [
     variationPoints: [1.3, 4.1, 2.5, 5.1, 2.3, 2.4, 1.3],
     code: 'NATU',
     year: '2023',
+    aum: '$430.88m',
+    issueDate: '18/04/2022',
+    vintageRange: '2019 – 2022',
+    ter: '0.15%',
+    priceAtClose: '$17.68',
+    priceAtOpen: '$17.74',
   },
 ];

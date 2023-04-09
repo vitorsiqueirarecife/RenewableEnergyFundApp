@@ -5,11 +5,13 @@ import {
   RootNavigationProps,
   RootStackParamList,
 } from '../../../../routes/types';
-import {mockFunds} from '../../../Home/screens/Explore/Funds/mock';
+
 import Header from '../../../../shared/components/Header';
 import Typography from '../../../../shared/components/Typography';
 import ScrollView from '../../../../shared/components/ScrollView';
 import Display from './Display';
+import Info from './Info';
+import {mockFunds} from '../../../../shared/mocks';
 
 const AssetDetails = () => {
   const {goBack} = useNavigation<RootNavigationProps<'Init'>>();
@@ -40,6 +42,7 @@ const AssetDetails = () => {
       </Header>
 
       {data && <Display asset={data} />}
+      {data && <Info asset={data} />}
     </ScrollView>
   );
 };

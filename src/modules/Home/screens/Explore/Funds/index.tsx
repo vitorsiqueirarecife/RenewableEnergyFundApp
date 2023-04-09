@@ -2,8 +2,9 @@ import React from 'react';
 import Box from '../../../../../shared/components/Box';
 import Typography from '../../../../../shared/components/Typography';
 import ScrollView from '../../../../../shared/components/ScrollView';
-import {mockFunds} from './mock';
+
 import FundItem from './FundItem';
+import {mockFunds} from '../../../../../shared/mocks';
 
 const Funds = () => {
   return (

@@ -1,4 +1,4 @@
-import {Fund} from '../../../../Home/screens/Explore/Funds/FundItem/types';
+import {Fund} from '../../../../../shared/models';
 
 export type Props = {
   asset: Fund;

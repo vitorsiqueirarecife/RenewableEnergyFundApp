@@ -14,7 +14,7 @@ const Header = ({children, handleBack}: Props) => {
       borderBottomWidth={1}
       borderBottomColor="#d6d6d6"
       height={90}>
-      <Box flex={1}>
+      <Box flex={1} paddingLeft={20}>
         <TouchableOpacity onPress={handleBack}>
           <Icon size="large" color="#000000" name="arrow-left" />
         </TouchableOpacity>
@@ -27,7 +27,7 @@ const Header = ({children, handleBack}: Props) => {
         alignItems="center">
         {children}
       </Box>
-      <Box flex={1} />
+      <Box flex={1} paddingRight={20} />
     </Box>
   );
 };
