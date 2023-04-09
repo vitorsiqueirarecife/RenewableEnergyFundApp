@@ -13,7 +13,7 @@ const Funds = () => {
           Funds
         </Typography>
       </Box>
-      <ScrollView height={165} marginBottom={10} horizontal>
+      <ScrollView height={170} marginBottom={10} horizontal>
         {mockFunds.map(fundItem => {
           const {
             id,

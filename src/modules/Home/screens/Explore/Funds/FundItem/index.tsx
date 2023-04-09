@@ -42,13 +42,14 @@ const FundItem = ({
       borderRadius={4}
       marginX={12}
       minWidth={145}
-      height={145}
+      height={160}
       padding={12}>
-      <Box>
-        <Typography fontSize={12} color="#000" fontWeight="600">
-          {name}
-        </Typography>
+      <Box marginBottom={1}>
+        <Icon size="small" color={iconColor} name={iconName} />
       </Box>
+      <Typography fontSize={12} color="#000" fontWeight="600">
+        {name}
+      </Typography>
       <LineChart
         variationPoints={variationPoints}
         lineColor={variationColor}
