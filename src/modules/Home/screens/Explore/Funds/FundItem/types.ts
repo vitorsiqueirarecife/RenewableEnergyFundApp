@@ -1,4 +1,4 @@
-export type Found = {
+export type Fund = {
   id: string;
   iconName: string;
   iconColor: string;
@@ -8,4 +8,4 @@ export type Found = {
   variationPoints: number[];
 };
 
-export type Props = Found;
+export type Props = Fund;

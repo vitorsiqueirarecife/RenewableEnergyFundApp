@@ -1,6 +1,6 @@
-import {Found} from './FundItem/types';
+import {Fund} from './FundItem/types';
 
-export const mockFunds: Found[] = [
+export const mockFunds: Fund[] = [
   {
     id: '493267498329',
     iconColor: '#4A88D0',
