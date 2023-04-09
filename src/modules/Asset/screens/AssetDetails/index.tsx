@@ -13,6 +13,7 @@ import Display from './Display';
 import Info from './Info';
 import {mockFunds} from '../../../../shared/mocks';
 import Breakdown from './Breakdown';
+import YourPortfolio from './YourPortfolio';
 
 const AssetDetails = () => {
   const {goBack} = useNavigation<RootNavigationProps<'Init'>>();
@@ -45,6 +46,7 @@ const AssetDetails = () => {
       {data && <Display asset={data} />}
       {data && <Info asset={data} />}
       {data && <Breakdown asset={data} />}
+      <YourPortfolio />
     </ScrollView>
   );
 };

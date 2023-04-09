@@ -29,14 +29,8 @@ export const auth = createSlice({
           user.password === action.payload.password,
       );
 
-      console.log('----');
-      console.log(state.Users);
-      console.log(action.payload);
-      console.log(found);
-
       if (found) {
         state.Session = found;
-        console.log(state.Session);
       } else {
         throw 'User not found';
       }

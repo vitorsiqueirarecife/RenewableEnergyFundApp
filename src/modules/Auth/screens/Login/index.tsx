@@ -32,14 +32,9 @@ const Login = () => {
   }, [isSecureTextEntry]);
 
   const onSubmit = useCallback(() => {
-    console.log('here');
     const data = getValues();
     try {
       dispatch(login(data));
-      Toast.show({
-        type: 'success',
-        text1: 'Login successful',
-      });
       navigate('Init');
     } catch (err) {
       Toast.show({

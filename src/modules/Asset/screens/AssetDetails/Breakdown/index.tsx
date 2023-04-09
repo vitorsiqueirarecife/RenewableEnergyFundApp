@@ -16,13 +16,8 @@ const Breakdown = ({asset}: Props) => {
 
       <ScrollView marginBottom={20} horizontal>
         {asset.news?.map(news => (
-          <Box marginRight={3}>
-            <News
-              key={news.id}
-              image={news.image}
-              logo={news.logo}
-              text={news.text}
-            />
+          <Box key={news.id} marginRight={3}>
+            <News image={news.image} logo={news.logo} text={news.text} />
           </Box>
         ))}
       </ScrollView>

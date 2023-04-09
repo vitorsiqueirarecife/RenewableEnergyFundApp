@@ -8,11 +8,13 @@ import {TouchableOpacity} from 'react-native';
 const Input = ({title, error, adornment, adornmentAction, ...rest}: Props) => {
   return (
     <Box display="flex" flexDirection="column" width="100%" flexGrow={0}>
-      <Box flex={1} marginBottom={1}>
-        <Typography fontSize={11} fontWeight="400">
-          {title}
-        </Typography>
-      </Box>
+      {title && (
+        <Box flex={1} marginBottom={1}>
+          <Typography fontSize={11} fontWeight="400">
+            {title}
+          </Typography>
+        </Box>
+      )}
       <Box flex={1} position="relative" width="100%">
         <InputBase
           multiline={false}

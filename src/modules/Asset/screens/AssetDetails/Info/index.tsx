@@ -14,12 +14,24 @@ const Info = ({asset}: Props) => {
       </Box>
 
       <Box width="100%" display="flex" flexDirection="row" flexWrap="wrap">
-        <Item name="AUM" valeu={asset.aum} />
-        <Item name="Issue Date" valeu={asset.issueDate} />
-        <Item name="Vintage Range" valeu={asset.vintageRange} />
-        <Item name="TER" valeu={asset.ter} />
-        <Item name="Price at Close" valeu={asset.priceAtClose} />
-        <Item name="Price at Open" valeu={asset.priceAtOpen} />
+        <Item key="AUM" name="AUM" valeu={asset.aum} />
+        <Item key="Issue Date" name="Issue Date" valeu={asset.issueDate} />
+        <Item
+          key="Vintage Range"
+          name="Vintage Range"
+          valeu={asset.vintageRange}
+        />
+        <Item key="TER" name="TER" valeu={asset.ter} />
+        <Item
+          key="Price at Close"
+          name="Price at Close"
+          valeu={asset.priceAtClose}
+        />
+        <Item
+          key="Price at Open"
+          name="Price at Open"
+          valeu={asset.priceAtOpen}
+        />
       </Box>
     </Box>
   );

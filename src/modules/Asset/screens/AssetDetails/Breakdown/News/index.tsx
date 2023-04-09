@@ -15,7 +15,7 @@ const News = ({image, logo, text}: Props) => {
         <Image source={image} style={style} />
       </Box>
       <Box paddingX={2} paddingY={3}>
-        <Image source={logo} />
+        <Image source={logo} resizeMode="cover" />
       </Box>
       <Box padding={2}>
         <Typography fontSize={14} fontWeight={400} color="#000">
